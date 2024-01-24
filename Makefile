@@ -26,13 +26,13 @@ $(OBJ):
 $(OBJ)/main.o: $(INCLUDE)/bridge.h
 $(OBJ)/vehicle.o: $(INCLUDE)/bridge.h
 
-$(DEBUG_EXE): $(SRC)/main.c $(OBJ)/bridge.o
-	$(CC) $(CFLAGS) $(DFLAGS) -o $@ $^
+debug: $(SRC)/main.c $(OBJ)/bridge.o
+	$(CC) $(CFLAGS) $(DFLAGS) -o $(DEBUG_EXE) $^
 
 run: $(EXE)
 	./$(EXE) 0 3
 
-test: $(DEBUG_EXE)
+test: debug
 	./testing.sh
 
 clean:

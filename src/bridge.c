@@ -28,6 +28,14 @@ void bridge_destroy(bridge_t *b) {
 
 /* bridge_print */
 void bridge_print(bridge_t *bridge) {
+  printf("---------  BRIDGE  ----------\n");
+  if (bridge->cur_dir == TO_NORWICH) {
+    printf("N %03d  <--  %02d/%02d       %03d H\n", bridge->n_cars_waiting[TO_HANOVER], bridge->n_cars_on, max_cars, bridge->n_cars_waiting[TO_NORWICH]);
+  } else {
+    printf("N %03d       %02d/%02d  -->  %03d H\n", bridge->n_cars_waiting[TO_HANOVER], bridge->n_cars_on, max_cars, bridge->n_cars_waiting[TO_NORWICH]);
+  }
+  printf("-----------------------------\n");
+  /*
   char *s = "----------------  bridge state  ------------------\n"
             "%d car(s) on the bridge; max capacity: %d\n"
             "traffic flow goes from %s to %s\n"
@@ -37,4 +45,5 @@ void bridge_print(bridge_t *bridge) {
   printf(s, bridge->n_cars_on, max_cars, p_dir(!(bridge->cur_dir)),
          p_dir(bridge->cur_dir), bridge->n_cars_waiting[TO_NORWICH],
          bridge->n_cars_waiting[TO_HANOVER]);
+         */
 }

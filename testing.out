@@ -1,0 +1,326 @@
+gcc -Wall -g -I./include -DDEBUG -o debug_bridge src/main.c obj/bridge.o
+./testing.sh
+10 Cars to Hanover; MAX_CARS=3
+Starting Bridge Simulation!
+--Arriving at bridge heading to hanover
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 000       01/03  -->  000 H
+-----------------------------
+--Arriving at bridge heading to hanover
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 000       02/03  -->  000 H
+-----------------------------
+--Arriving at bridge heading to hanover
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 000       03/03  -->  000 H
+-----------------------------
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the bridge is full
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the bridge is full
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the bridge is full
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the bridge is full
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the bridge is full
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the bridge is full
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the bridge is full
+    Exiting...n_cars_on = 2
+    Waking one thread same direction
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 006       03/03  -->  000 H
+-----------------------------
+    Exiting...n_cars_on = 2
+    Waking one thread same direction
+    Exiting...n_cars_on = 1
+    Waking one thread same direction
+    Waking one thread same direction
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 005       02/03  -->  000 H
+-----------------------------
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 004       03/03  -->  000 H
+-----------------------------
+  Car waits before heading to to hanover because the bridge is full
+    Exiting...n_cars_on = 2
+    Waking one thread same direction
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 003       03/03  -->  000 H
+-----------------------------
+    Exiting...n_cars_on = 2
+    Waking one thread same direction
+    Exiting...n_cars_on = 1
+    Waking one thread same direction
+    Waking one thread same direction
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 002       02/03  -->  000 H
+-----------------------------
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 001       03/03  -->  000 H
+-----------------------------
+    Exiting...n_cars_on = 2
+    Waking one thread same direction
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 000       03/03  -->  000 H
+-----------------------------
+    Exiting...n_cars_on = 2
+    No threads to wake up!
+    Exiting...n_cars_on = 1
+    No threads to wake up!
+    Exiting...n_cars_on = 0
+    No threads to wake up!
+10 Cars to Norwich; MAX_CARS=5
+Starting Bridge Simulation!
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  01/05       000 H
+-----------------------------
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  02/05       000 H
+-----------------------------
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  03/05       000 H
+-----------------------------
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  04/05       000 H
+-----------------------------
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  05/05       000 H
+-----------------------------
+--Arriving at bridge heading to norwich
+  Car waits before heading to to norwich because the bridge is full
+--Arriving at bridge heading to norwich
+  Car waits before heading to to norwich because the bridge is full
+--Arriving at bridge heading to norwich
+  Car waits before heading to to norwich because the bridge is full
+--Arriving at bridge heading to norwich
+  Car waits before heading to to norwich because the bridge is full
+--Arriving at bridge heading to norwich
+  Car waits before heading to to norwich because the bridge is full
+    Exiting...n_cars_on = 4
+    Waking one thread same direction
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  05/05       004 H
+-----------------------------
+    Exiting...n_cars_on = 4
+    Waking one thread same direction
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  05/05       003 H
+-----------------------------
+    Exiting...n_cars_on = 4
+    Waking one thread same direction
+    Exiting...n_cars_on = 3
+    Waking one thread same direction
+    Waking one thread same direction
+    Exiting...n_cars_on = 2
+    Waking one thread same direction
+    Waking one thread same direction
+    Waking one thread same direction
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  03/05       002 H
+-----------------------------
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  04/05       001 H
+-----------------------------
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  05/05       000 H
+-----------------------------
+    Exiting...n_cars_on = 4
+    No threads to wake up!
+    Exiting...n_cars_on = 3
+    No threads to wake up!
+    Exiting...n_cars_on = 2
+    No threads to wake up!
+    Exiting...n_cars_on = 1
+    No threads to wake up!
+    Exiting...n_cars_on = 0
+    No threads to wake up!
+10 cars heading in alternate direction; MAX_CARS=2
+Starting Bridge Simulation!
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  01/02       000 H
+-----------------------------
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the traffic is in wrong direction
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 001  <--  02/02       000 H
+-----------------------------
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because bridge is full and traffic is in wrong direction
+--Arriving at bridge heading to norwich
+  Car waits before heading to to norwich because the bridge is full
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because bridge is full and traffic is in wrong direction
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because bridge is full and traffic is in wrong direction
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because bridge is full and traffic is in wrong direction
+--Arriving at bridge heading to norwich
+  Car waits before heading to to norwich because the bridge is full
+--Arriving at bridge heading to norwich
+  Car waits before heading to to norwich because the bridge is full
+    Exiting...n_cars_on = 1
+    Waking one thread same direction
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 005  <--  02/02       002 H
+-----------------------------
+    Exiting...n_cars_on = 1
+    Waking one thread same direction
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 005  <--  02/02       001 H
+-----------------------------
+    Exiting...n_cars_on = 1
+    Waking one thread same direction
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 005  <--  02/02       000 H
+-----------------------------
+    Exiting...n_cars_on = 1
+    No threads to wake up!
+    Exiting...n_cars_on = 0
+    Waking one thread opposite direction
+    Waking one thread opposite direction
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 004       01/02  -->  000 H
+-----------------------------
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 003       02/02  -->  000 H
+-----------------------------
+    Exiting...n_cars_on = 1
+    Waking one thread same direction
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 002       02/02  -->  000 H
+-----------------------------
+    Exiting...n_cars_on = 1
+    Waking one thread same direction
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 001       02/02  -->  000 H
+-----------------------------
+    Exiting...n_cars_on = 1
+    Waking one thread same direction
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 000       02/02  -->  000 H
+-----------------------------
+    Exiting...n_cars_on = 1
+    No threads to wake up!
+    Exiting...n_cars_on = 0
+    No threads to wake up!
+Testing Random Interleaving; MAX_CARS=5
+Starting Bridge Simulation!
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 000  <--  01/05       000 H
+-----------------------------
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the traffic is in wrong direction
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 001  <--  02/05       000 H
+-----------------------------
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the traffic is in wrong direction
+    Exiting...n_cars_on = 1
+    No threads to wake up!
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 002  <--  02/05       000 H
+-----------------------------
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 002  <--  03/05       000 H
+-----------------------------
+--Arriving at bridge heading to norwich
+  Car wakes up heading to norwich
+---------  BRIDGE  ----------
+N 002  <--  04/05       000 H
+-----------------------------
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the traffic is in wrong direction
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the traffic is in wrong direction
+--Arriving at bridge heading to hanover
+  Car waits before heading to to hanover because the traffic is in wrong direction
+    Exiting...n_cars_on = 3
+    No threads to wake up!
+    Exiting...n_cars_on = 2
+    No threads to wake up!
+    Exiting...n_cars_on = 1
+    No threads to wake up!
+    Exiting...n_cars_on = 0
+    Waking one thread opposite direction
+    Waking one thread opposite direction
+    Waking one thread opposite direction
+    Waking one thread opposite direction
+    Waking one thread opposite direction
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 004       01/05  -->  000 H
+-----------------------------
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 003       02/05  -->  000 H
+-----------------------------
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 002       03/05  -->  000 H
+-----------------------------
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 001       04/05  -->  000 H
+-----------------------------
+  Car wakes up heading to hanover
+---------  BRIDGE  ----------
+N 000       05/05  -->  000 H
+-----------------------------
+    Exiting...n_cars_on = 4
+    No threads to wake up!
+    Exiting...n_cars_on = 3
+    No threads to wake up!
+    Exiting...n_cars_on = 2
+    No threads to wake up!
+    Exiting...n_cars_on = 1
+    No threads to wake up!
+    Exiting...n_cars_on = 0
+    No threads to wake up!

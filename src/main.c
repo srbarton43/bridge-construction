@@ -43,7 +43,13 @@ void ArriveBridge(direction dir) {
   while (!(bridge->n_cars_on == 0 ||
            (bridge->n_cars_on < max_cars && bridge->cur_dir == dir))) {
 #ifdef DEBUG
-    printf("  Car waits before heading to %s\n", p_dir(dir));
+    printf("  Car waits before heading to %s ", p_dir(dir));
+    if (bridge->cur_dir != dir && bridge->n_cars_on == max_cars)
+      printf("because bridge is full and traffic is in wrong direction\n");
+    else if (bridge->n_cars_on == max_cars)
+      printf("because the bridge is full\n");
+    else
+      printf("because the traffic is in wrong direction\n");
 #endif
     pthread_cond_wait(&cvars[dir], bridge->mutex);
   }
