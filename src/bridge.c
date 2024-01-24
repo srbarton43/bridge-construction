@@ -29,11 +29,12 @@ void bridge_destroy(bridge_t *b) {
 /* bridge_print */
 void bridge_print(bridge_t *bridge) {
   char *s = "----------------  bridge state  ------------------\n"
-            "%d cars of max %d on bridge heading to %s\n"
+            "%d car(s) on the bridge; max capacity: %d\n"
+            "traffic flow goes from %s to %s\n"
             "%d cars waiting on hanover side to head to norwich\n"
             "%d cars waiting on norwich side to head to hanover\n"
             "--------------------------------------------------\n";
-  printf(s, bridge->n_cars_on, MAX_CARS, p_dir(bridge->cur_dir),
-         bridge->n_cars_waiting[TO_NORWICH],
+  printf(s, bridge->n_cars_on, max_cars, p_dir(!(bridge->cur_dir)),
+         p_dir(bridge->cur_dir), bridge->n_cars_waiting[TO_NORWICH],
          bridge->n_cars_waiting[TO_HANOVER]);
 }

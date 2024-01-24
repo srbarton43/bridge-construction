@@ -3,6 +3,22 @@
 This project uses threads to simulate a one-way bridge spanning the Connecticut River.
 It uses only "pure" thread operations provided by the pthread library, eg. Condition Variables and Locks.
 
+## Usage
+
+Compile the project with `make`
+
+Run the program, `simulate_bridge`, with:
+
+```bash
+./simulate_bridge MODE MAX_CARS MAX_THREADS
+```
+
+Where:
+
+- MODE      := [0,4] and represents interleaving mode
+- MAX_CARS  := max number of cars the bridge can hold
+- MAX_THREADS := max number of threads that the program creates
+
 ## Bridge Rules
 
 Cars going in opposite directions will crash...so it is not allowed.
@@ -28,3 +44,14 @@ For example, take a car driving from hanover to norwich.
 There are two cases:
 - If there are still cars on the bridge, the thread will signal (MAX_CARS - NUM_CARS_ON_BRIDGE) threads waiting on HANOVER_SIDE_CVAR.
 - Else, if there are no cars on the bridge, the exiting thread signals (MAX_CARS) threads waiting on the opposite side of the bridge.
+
+## Testing
+
+There are a variety of tests that the simulation can perform using CLI arguments.
+For MODE 0, the program randomly assigns each thread a direction, performing a test on random interleaving.
+In MODE 1, cars only head to hanover, and in MODE 2, cars only head to norwich.
+And in MODE 3, cars arrive perfectly alternating in direction, testing for alternate interleavings.
+To test, I ran the `testing.sh` to test each different mode. 
+Furthermore, I ran MODE 0 many times to witness whether expected behavior was upheld.
+For each test, I compiled the program with the debug flag enabled for a more verbose display of each thread.
+After no bugs were exposed through testing, I further looked into the logic of the program to double check that the design made sense.

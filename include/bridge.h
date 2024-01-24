@@ -6,11 +6,8 @@
  */
 #ifndef __VEHICLE_H
 #define __VEHICLE_H
-
-#include <pthread.h>
-
-/* max number of cars on the bridge at a time */
-#define MAX_CARS 6
+#include <pthread.h> /* global variable to represent max cars on bridge */
+extern int max_cars;
 
 typedef enum { TO_NORWICH, TO_HANOVER } direction;
 

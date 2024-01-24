@@ -1,11 +1,13 @@
-CC 			:= gcc
-OBJ 		:= ./obj
-INCLUDE := ./include
-SRC 		:= ./src
-SRCS 		:= $(wildcard $(SRC)/*.c)
-OBJS 		:= $(patsubst $(SRC)/%.c,$(OBJ)/%.o,$(SRCS))
-EXE 		:= simulate_bridge
-CFLAGS 	:= -Wall -g -I$(INCLUDE)
+CC 				:= gcc
+OBJ 			:= ./obj
+INCLUDE 	:= ./include
+SRC 			:= ./src
+SRCS 			:= $(wildcard $(SRC)/*.c)
+OBJS 			:= $(patsubst $(SRC)/%.c,$(OBJ)/%.o,$(SRCS))
+EXE 			:= simulate_bridge
+DEBUG_EXE := debug_bridge
+CFLAGS 		:= -Wall -g -I$(INCLUDE)
+DFLAGS 		:= -DDEBUG
 
 .PHONY: all run clean
 
@@ -24,8 +26,14 @@ $(OBJ):
 $(OBJ)/main.o: $(INCLUDE)/bridge.h
 $(OBJ)/vehicle.o: $(INCLUDE)/bridge.h
 
+$(DEBUG_EXE): $(SRC)/main.c $(OBJ)/bridge.o
+	$(CC) $(CFLAGS) $(DFLAGS) -o $@ $^
+
 run: $(EXE)
-	./$(EXE)
+	./$(EXE) 0 3
+
+test: $(DEBUG_EXE)
+	./testing.sh
 
 clean:
-	rm -rf $(OBJ) $(EXE)
+	rm -rf $(OBJ) $(EXE) $(DEBUG_EXE)
