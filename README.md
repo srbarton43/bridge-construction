@@ -3,6 +3,14 @@
 This project uses threads to simulate a one-way bridge spanning the Connecticut River.
 It uses only "pure" thread operations provided by the pthread library, eg. Condition Variables and Locks.
 
+example output of bridge state:
+
+```
+    ---------  BRIDGE  ----------
+    N 021       98/99  -->  000 H
+    -----------------------------
+```
+
 ## Usage
 
 Compile the project with `make`

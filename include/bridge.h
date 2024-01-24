@@ -44,6 +44,12 @@ void bridge_destroy(bridge_t *b);
 /*
  * bridge_print - prints out bridge state
  *
+ * does such in this format:
+ *    N XXX [<--] AA/BB [-->] YYY H
+ *  where XXX and YYY represent cars waiting at respective sides
+ *  and, AA = cars on bridge and BB = max_cars
+ *  and the arrow represents traffic direction
+ *
  * params:
  *    bridge := pointer to bridge struct
  */

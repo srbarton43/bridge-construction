@@ -9,7 +9,7 @@ DEBUG_EXE := debug_bridge
 CFLAGS 		:= -Wall -g -I$(INCLUDE)
 DFLAGS 		:= -DDEBUG
 
-.PHONY: all run clean
+.PHONY: all run clean debug
 
 all: $(EXE)
 
@@ -30,7 +30,7 @@ debug: $(SRC)/main.c $(OBJ)/bridge.o
 	$(CC) $(CFLAGS) $(DFLAGS) -o $(DEBUG_EXE) $^
 
 run: $(EXE)
-	./$(EXE) 0 3
+	./$(EXE) 0 3 15
 
 test: debug
 	./testing.sh

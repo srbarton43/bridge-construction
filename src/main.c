@@ -32,6 +32,7 @@ static void alternate_direction(int thread_count);
  *  3) waits for cvar (note: there is a cvar for each direction)
  *      condition := ~ [ num_cars == 0 || ( dir == bridge_dir
  *                      && cars < MAX_CARS ]
+ *  4) thread wakes up, holding the lock while OnBridge is called
  */
 void ArriveBridge(direction dir) {
   pthread_mutex_lock(bridge->mutex);
@@ -58,6 +59,11 @@ void ArriveBridge(direction dir) {
 }
 /*
  * OnBridge - handles when the car enters the bridge
+ *
+ * note:
+ *  thread holds the lock when this function is called
+ *    -> (this is so that the logic follows that when a car wakes up
+ *        the bridge state reflects that it should immediately be on the bridge)
  *
  * what it does:
  *  1) updates bridge state
@@ -164,7 +170,17 @@ int main(int argc, char *argv[]) {
 
   if (argc == 4 && strlen(argv[1]) == 1 && isdigit(argv[1][0])) {
     max_cars = atoi(argv[2]);
+    /* check that argument is valid */
+    if (max_cars > 99 || max_cars < 1) {
+      fprintf(stderr, "max_cars must be in [1,99]\n");
+      exit(1);
+    }
     int num_threads = atoi(argv[3]);
+    /* check that argument is valid */
+    if (num_threads > 999 || num_threads < 1) {
+      fprintf(stderr, "num_threads must be in [1,999]\n");
+      exit(1);
+    }
     switch (atoi(argv[1])) {
     case 0:
       printf("Random Interleaving\n");
