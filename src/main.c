@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/random.h>
-#include <threads.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -168,17 +167,22 @@ int main(int argc, char *argv[]) {
     int num_threads = atoi(argv[3]);
     switch (atoi(argv[1])) {
     case 0:
+      printf("Random Interleaving\n");
       random_interleaving(num_threads);
       break;
     case 1:
+      printf("All cars head to Hanover\n");
       all_same_dir(TO_HANOVER, num_threads);
       break;
     case 2:
+      printf("All cars head to Norwich\n");
       all_same_dir(TO_NORWICH, num_threads);
       break;
     case 3:
+      printf("Cars alternate in direction starting with heading to Norwich\n");
       alternate_direction(num_threads);
       break;
+      printf("Cars alternate in direction starting with heading to Norwich\n");
     default:
       fprintf(stderr, "Invalid MODE\n");
       break;

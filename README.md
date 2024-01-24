@@ -14,9 +14,13 @@ Run the program, `simulate_bridge`, with:
 ```
 
 Where:
-- MODE      := [0,4] and represents interleaving mode
-- MAX_CARS  := max number of cars the bridge can hold
-- MAX_THREADS := max number of threads that the program creates
+- MODE          := [0,4] and represents interleaving mode
+    - 0 := random interleaving
+    - 1 := all cars head to hanover
+    - 2 := all cars head to norwich
+    - 3 := calls alternate in direction starting with heading to norwich
+- MAX_CARS      := max number of cars the bridge can hold
+- MAX_THREADS   := max number of threads that the program creates
 
 For seeing verbose output, build the project with `make debug`.
 
